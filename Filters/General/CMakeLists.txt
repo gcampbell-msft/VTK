@@ -148,3 +148,8 @@ vtk_module_add_module(VTK::FiltersGeneral
   NOWRAP_CLASSES ${no_wrap_classes}
   TEMPLATES ${templates})
 vtk_add_test_mangling(VTK::FiltersGeneral)
+
+# Reuse the CommonCore precompiled header to improve build performance
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+  target_precompile_headers(FiltersGeneral REUSE_FROM CommonCore)
+endif()

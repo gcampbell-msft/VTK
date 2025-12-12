@@ -148,3 +148,8 @@ vtk_module_add_module(VTK::FiltersCore
   PRIVATE_HEADERS ${private_headers})
 
 vtk_add_test_mangling(VTK::FiltersCore)
+
+# Reuse the CommonCore precompiled header to improve build performance
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+  target_precompile_headers(FiltersCore REUSE_FROM CommonCore)
+endif()

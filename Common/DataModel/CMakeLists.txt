@@ -369,3 +369,8 @@ vtk_module_add_module(VTK::CommonDataModel
   NOWRAP_HEADERS    ${nowrap_headers}
   PRIVATE_TEMPLATES ${private_templates})
 vtk_add_test_mangling(VTK::CommonDataModel)
+
+# Reuse the CommonCore precompiled header to improve build performance
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+  target_precompile_headers(CommonDataModel REUSE_FROM CommonCore)
+endif()
