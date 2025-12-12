@@ -215,3 +215,8 @@ if (VTK_DEFAULT_RENDER_WINDOW_OFFSCREEN)
       VTK_DEFAULT_RENDER_WINDOW_OFFSCREEN)
 endif()
 vtk_add_test_mangling(VTK::RenderingCore)
+
+# Reuse the CommonCore precompiled header to improve build performance
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+  target_precompile_headers(RenderingCore REUSE_FROM CommonCore)
+endif()

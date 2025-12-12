@@ -92,3 +92,8 @@ vtk_module_add_module(VTK::CommonExecutionModel
   SOURCES ${serialization_helper_sources}
   TEMPLATE_CLASSES ${template_classes})
 vtk_add_test_mangling(VTK::CommonExecutionModel)
+
+# Reuse the CommonCore precompiled header to improve build performance
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+  target_precompile_headers(CommonExecutionModel REUSE_FROM CommonCore)
+endif()
