@@ -10,11 +10,15 @@
 #include <algorithm>
 #include <cmath>
 #include <fstream>
+#include <functional>
 #include <iostream>
+#include <list>
 #include <map>
 #include <memory>
+#include <mutex>
 #include <sstream>
 #include <string>
+#include <tuple>
 #include <unordered_map>
 #include <vector>
 
@@ -26,5 +30,12 @@
 #include "vtkSetGet.h"
 #include "vtkSystemIncludes.h"
 #include "vtkType.h"
+
+// Expensive VTK headers frequently included across the module
+// These are added based on build insights analysis to reduce recompilation
+#include "vtkAbstractArray.h"
+#include "vtkDataArray.h"
+#include "vtkMath.h"
+#include "vtkSmartPointer.h"
 
 #endif // vtkCommonCorePCH_h
