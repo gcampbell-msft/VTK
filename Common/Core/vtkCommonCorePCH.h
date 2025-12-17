@@ -7,15 +7,19 @@
 #define vtkCommonCorePCH_h
 
 // STL headers that are expensive to compile and widely used
+#include <unordered_map>  
+#include <tuple>          
+#include <vector>         
+#include <list>           
+#include <memory>         
+#include <functional>     
+#include <mutex>          
+#include <algorithm>
+#include <string>
+#include <map>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <string>
-#include <vector>
-#include <map>
-#include <unordered_map>
-#include <memory>
-#include <algorithm>
 #include <cmath>
 
 // Core VTK headers that are included in many files
@@ -26,5 +30,12 @@
 #include "vtkObjectBase.h"
 #include "vtkObject.h"
 #include "vtkIndent.h"
+
+// Expensive VTK headers frequently included across the module
+// These are added based on build insights analysis to reduce recompilation
+#include "vtkSmartPointer.h"
+#include "vtkAbstractArray.h"
+#include "vtkDataArray.h"
+#include "vtkMath.h"        
 
 #endif // vtkCommonCorePCH_h
