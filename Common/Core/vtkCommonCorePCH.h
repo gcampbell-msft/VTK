@@ -6,7 +6,7 @@
 #ifndef vtkCommonCorePCH_h
 #define vtkCommonCorePCH_h
 
-// STL headers that are expensive to compile and widely used
+// STL Headers
 #include <algorithm>
 #include <cmath>
 #include <fstream>
@@ -32,7 +32,6 @@
 #include "vtkType.h"
 
 // Expensive VTK headers frequently included across the module
-// These are added based on build insights analysis to reduce recompilation
 #include "vtkAbstractArray.h"
 #include "vtkDataArray.h"
 #include "vtkMath.h"
