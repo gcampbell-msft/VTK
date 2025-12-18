@@ -784,7 +784,6 @@ vtk_module_compile_features(VTK::CommonCore
     cxx_std_17)
 
 # Add precompiled header to improve build performance
-# This caches the compilation of frequently-used headers
 if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16" AND VTK_USE_PCH)
   target_precompile_headers(CommonCore
     PRIVATE

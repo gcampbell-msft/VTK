@@ -6,7 +6,7 @@
 #ifndef vtkCommonCorePCH_h
 #define vtkCommonCorePCH_h
 
-// STL headers that are expensive to compile and widely used
+// STL Headers
 #include <unordered_map>  
 #include <tuple>          
 #include <vector>         
@@ -32,7 +32,6 @@
 #include "vtkIndent.h"
 
 // Expensive VTK headers frequently included across the module
-// These are added based on build insights analysis to reduce recompilation
 #include "vtkSmartPointer.h"
 #include "vtkAbstractArray.h"
 #include "vtkDataArray.h"
