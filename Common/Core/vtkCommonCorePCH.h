@@ -7,34 +7,34 @@
 #define vtkCommonCorePCH_h
 
 // STL Headers
-#include <unordered_map>  
-#include <tuple>          
-#include <vector>         
-#include <list>           
-#include <memory>         
-#include <functional>     
-#include <mutex>          
 #include <algorithm>
-#include <string>
-#include <map>
-#include <fstream>
-#include <iostream>
-#include <sstream>
 #include <cmath>
+#include <fstream>
+#include <functional>
+#include <iostream>
+#include <list>
+#include <map>
+#include <memory>
+#include <mutex>
+#include <sstream>
+#include <string>
+#include <tuple>
+#include <unordered_map>
+#include <vector>
 
 // Core VTK headers that are included in many files
-#include "vtkSystemIncludes.h"
 #include "vtkIOStream.h"
-#include "vtkType.h"
-#include "vtkSetGet.h"
-#include "vtkObjectBase.h"
-#include "vtkObject.h"
 #include "vtkIndent.h"
+#include "vtkObject.h"
+#include "vtkObjectBase.h"
+#include "vtkSetGet.h"
+#include "vtkSystemIncludes.h"
+#include "vtkType.h"
 
 // Expensive VTK headers frequently included across the module
-#include "vtkSmartPointer.h"
 #include "vtkAbstractArray.h"
 #include "vtkDataArray.h"
-#include "vtkMath.h"        
+#include "vtkMath.h"
+#include "vtkSmartPointer.h"
 
 #endif // vtkCommonCorePCH_h
