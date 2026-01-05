@@ -39,6 +39,7 @@ set(VTK_VERSION
 determine_version("${CMAKE_CURRENT_SOURCE_DIR}" "${GIT_EXECUTABLE}" "VTK")
 
 option(VTK_USE_PCH "Use precompiled headers to speed up compilation" ON)
+mark_as_advanced(VTK_USE_PCH)
 
 option(VTK_IOS_BUILD "Build vtk.framework for iOS" OFF)
 mark_as_advanced(VTK_IOS_BUILD)
